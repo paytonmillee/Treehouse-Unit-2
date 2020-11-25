@@ -94,9 +94,16 @@ function filterData(searchInput, list) {
       }
    }
 
-   // calling functions upward to run with the new filtered data
+   if(filteredDataArray.length) {
+       // calling functions upward to run with the new filtered data
    showPage(filteredDataArray, 1)
    addPagination(filteredDataArray);
+   } else {
+      const studentList = document.querySelector('.student-list'); // The query selector get the first tag/element with class student-list
+      studentList.innerHTML = '<p>No results found!</p>';
+   }
+
+  
 }
 
 // Call functions
